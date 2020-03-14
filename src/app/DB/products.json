@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Samsung Washing Mashine",
+      "imageUrl": "/assets/image/Tv.png"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Washing Mashine",
+      "imageUrl": "/assets/image/washing.png"
+    },
+    {
+      "id": 3,
+      "name": "Samsung Washing Mashine",
+      "imageUrl": "/assets/image/download.png"
+    },
+    {
+      "id": 4,
+      "name": "LG LED",
+      "imageUrl": "/assets/image/Tv.png"
+    }
+  ]
+}

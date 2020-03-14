@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="alert alert-success" *ngIf="showMessage">
+     {{errorMessage}}
+    </div>
+    <form (ngSubmit)="OnSubmit(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="productid">Product Id</label>
+        <input type="number" name="id" id="productid" [(ngModel)]="model.id" #productid="ngModel" required
+          class="form-control">
+        <div class="alert alert-danger" *ngIf="productid.touched && !productid.valid">
+          Product id is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="productName">Produt Name</label>
+        <select id="productName" class="form-control" name="name" [(ngModel)]="model.name" #productName="ngModel"
+          required>
+          <option value="">Please select product</option>
+          <option>LG LED</option>
+          <option>Sony Bravia</option>
+          <option>Samsung Washing Mashine</option>
+        </select>
+        <div class="alert alert-danger" *ngIf="productName.touched && !productName.valid">
+          Product is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name"> item Url</label>
+        <input type="text" name="imageUrl" id="imageUrl" [(ngModel)]="model.imageUrl" #imageUrl="ngModel" required
+          class="form-control">
+        <div class="alert alert-danger" *ngIf="imageUrl.touched && !imageUrl.valid">
+          Image url is required!
+        </div>
+        <!-- (change)="logIt(comment.value)" -->
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">{{btnText}}</button>
+      </div>
+  
+    </form>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Product Listing
+      </div>
+      <div class='panel-body'>
+        <div class='table-responsive'>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Image</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prod of productsList">
+                <td>{{prod.id}}</td>
+                <td>{{prod.name}}</td>
+                <td><img *ngIf="prod.imageUrl" [src]="prod.imageUrl" alt="prod.name" height="50px" /></td>
+                <td>
+                  <button (click)="deleteEmp(prod)" class="btn btn-info">Delete</button>
+                  <button (click)="editEmp(prod)" style="margin-left: 20px;" class="btn btn-info"> Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  

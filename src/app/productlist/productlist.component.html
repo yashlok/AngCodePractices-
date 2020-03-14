@@ -1,0 +1,10 @@
+<p>productlist works!</p>
+<ul>
+    <div *ngFor="let item of productList">
+      <app-product-details [item]="item"> </app-product-details>
+    </div>
+    <p appErrorMsg>Please fill</p>
+<button type="button" (click)="SendMessage()">Send</button>
+
+  </ul>
+  

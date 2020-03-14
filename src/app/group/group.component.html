@@ -1,0 +1,10 @@
+<p>group works!</p>
+<h1>Gropping</h1>
+<ul *ngFor ="let  group of countryDetails">
+    <li>{{group.country }}</li>
+    <ul *ngFor="let person of group.people">
+        <li>{{person.name}}
+
+        </li>
+    </ul>
+</ul>
